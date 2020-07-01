@@ -1,0 +1,58 @@
+.start-page-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    width: 400px;
+    height: auto;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .form-signin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .login-form-header {
+      margin-bottom: 2rem;
+    }
+
+    .login-block, .password-block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      color: #212529;
+    }
+
+    .error-border {
+      border: 1px solid red;
+    }
+
+    .error-message {
+      width: 100%;
+      color: red;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  .copyright {
+    color: #212529;
+  }
+}

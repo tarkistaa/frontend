@@ -1,35 +1,25 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { StartPageComponent } from './start-page.component';
 
-describe('AppComponent', () => {
+describe('StartPageComponent', () => {
+  let component: StartPageComponent;
+  let fixture: ComponentFixture<StartPageComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        StartPageComponent
-      ],
-    }).compileComponents();
+      declarations: [ StartPageComponent ]
+    })
+    .compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(StartPageComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'front'`, () => {
-    const fixture = TestBed.createComponent(StartPageComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('front');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(StartPageComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(StartPageComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('front app is running!');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

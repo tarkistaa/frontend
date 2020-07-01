@@ -1,0 +1,66 @@
+<div class="start-page-wrapper">
+  <div class="content-wrapper">
+    <div class="content">
+      <form class="form-signin"
+            [formGroup]="form"
+            (ngSubmit)="onSubmit()">
+        <h1 class="login-form-header h3 font-weight-normal">
+          Вход в систему
+        </h1>
+
+        <div class="login-block mt-1 mb-2">
+          <label for="inputLogin" class="sr-only">
+            Логин
+          </label>
+          <input formControlName="login"
+                 id="inputLogin"
+                 class="form-control"
+                 [class.error-border]="form.get('login').invalid && form.get('login').touched"
+                 type="text"
+                 placeholder="Логин"
+                 required>
+          <small *ngIf="form.get('login').invalid && form.get('login').touched"
+                 class="error-message">
+            Обязательное поле
+          </small>
+        </div>
+
+        <div class="password-block mt-1 mb-2">
+          <label for="inputPassword"
+                 class="sr-only">
+            Пароль
+          </label>
+          <input formControlName="password"
+                 id="inputPassword"
+                 class="form-control"
+                 [class.error-border]="form.get('password').invalid && form.get('password').touched"
+                 [type]="showPassword? 'text' : 'password'"
+                 placeholder="Пароль"
+                 required>
+          <small *ngIf="(form.get('password').invalid && form.get('password').touched)"
+                 class="error-message">
+            Обязательное поле
+          </small>
+        </div>
+
+        <button type="button"
+                class="btn btn-sm btn-block mt-1 mb-2"
+                [class.btn-outline-primary]="!showPassword"
+                [class.btn-primary]="showPassword"
+                (click)="showPassword = !showPassword">
+          Показать пароль
+        </button>
+
+        <button type="submit"
+                class="btn btn-lg btn-primary btn-block">
+          Вход
+        </button>
+
+        <p class="mt-3 mb-2 copyright">
+          2020 &copy; urglmorl
+        </p>
+
+      </form>
+    </div>
+  </div>
+</div>
