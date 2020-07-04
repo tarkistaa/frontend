@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-start-page',
-  templateUrl: './start-page.component.html',
-  styleUrls: ['./start-page.component.scss']
+  selector: 'login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss']
 })
 
-export class StartPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
 
   public showPassword: boolean = false;
   public form: FormGroup;
@@ -27,7 +27,7 @@ export class StartPageComponent implements OnInit {
   onSubmit() {
     if (!this.form.invalid && this.form.touched) {
       // TODO: отправлять запрос на сервер для получения токена
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
     } else {
       this.form.markAllAsTouched();
     }
